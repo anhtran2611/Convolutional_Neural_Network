@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from keras.datasets import cifar10
 from keras import layers
 from keras import models
-from keras.utils import to_categorical # cho phép sd one hot coding
+from keras.utils import to_categorical #  one hot coding
 
 
 (Xtrain, ytrain), (Xtest, ytest) = cifar10.load_data()
@@ -11,7 +11,7 @@ classes = ['airplane','automobile','bird','cat','deer','dog','frog','horse','shi
 
 #Chuẩn hóa lại dữ liệu để lúc nhân có số nhỏ (0-255)-->(0-1)
 Xtrain, Xtest = Xtrain/255, Xtest/255
-#classes được gọi là biến phân loại --> One hot coding
+#c --> One hot coding
 ytrain, ytest = to_categorical(ytrain), to_categorical(ytest)
 
 
@@ -37,7 +37,7 @@ models_training_first = models.Sequential([   # Tạo ra dạng sequential : chu
     layers.Flatten(input_shape=(32, 32, 3)),
     layers.Dense(3000, activation='relu'),
     layers.Dense(1000, activation='relu'),
-    layers.Dense(10, activation='softmax')  #10 nút kết nối vs 10 phần tử trong classes
+    layers.Dense(10, activation='softmax') 
 ])
 
 #models_training_first.summary() # hiển thị tổng quan về kiến trúc của mô hình.
