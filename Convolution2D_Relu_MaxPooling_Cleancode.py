@@ -1,4 +1,4 @@
-#rol = region of interesting : vùng diện tích vào kernel chiếu vào
+#ro = region of interesting : vùng diện tích vào kernel chiếu vào
 # có input lấy shape[0] là có row , shape[1] là có column nên k cần height và width nữa , tương tự với kernelSize
 #Stride là bước nhảy khi chập trên ảnh , bước nhảy càng nhiều thông tin càng mất nhiều
 # 16 Kernel thì nhân với input được 16 kết quả
