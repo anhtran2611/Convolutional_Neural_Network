@@ -9,7 +9,7 @@ from keras.utils import to_categorical #  one hot coding
 (Xtrain, ytrain), (Xtest, ytest) = cifar10.load_data()
 classes = ['airplane','automobile','bird','cat','deer','dog','frog','horse','ship','truck']
 
-#Chuẩn hóa lại dữ liệu để lúc nhân có số nhỏ (0-255)-->(0-1)
+#Chuẩn hóa lại dữ liệu (0-255)-->(0-1)
 Xtrain, Xtest = Xtrain/255, Xtest/255
 #c --> One hot coding
 ytrain, ytest = to_categorical(ytrain), to_categorical(ytest)
@@ -41,10 +41,7 @@ models_training_first = models.Sequential([   # Tạo ra dạng sequential : chu
 ])
 
 #models_training_first.summary() # hiển thị tổng quan về kiến trúc của mô hình.
-# # nối 3072 điểm với 3000 điểm , mỗi điểm tiếp xúc với đầy đủ 3000 điểm ==>3072x3000+3000=921...
-# # tiếp tục 3000x1000+1000
-# #....
-# # in ra : Trainable params: 12230010 (46.65 MB) là 12 triệu tham số , sau này khi train dữ liệu, nó sẽ tính toán lấy đạo hàm rồi quay ngược về cập nhật cho 12 triệu tham số
+
 # #Sau khi xây dựng mô hình,cần compile nó trước khi huấn luyện bằng cách chỉ định hàm mất mát, thuật toán tối ưu hóa, và các metric để theo dõi
 models_training_first.compile(optimizer='adam', # bộ tối ưu hóa , áp dụng giải thuật để cập nhật lại tham số
                               loss='categorical_crossentropy', # tính toán mất mát
